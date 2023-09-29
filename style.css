@@ -1,0 +1,54 @@
+p,h1,h2,h3,h4,h5,h6,a {
+    font-family: 'Pixelify Sans', cursive;
+}
+
+p,a {
+    color: #606593;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    height: 600;
+}
+
+nav li
+{
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #ffedc6;
+}
+
+a {
+    color: #fffae0;
+}
+
+header {
+    background-color: #606593;
+}
+
+.content
+{
+    text-align: center;
+}
+
+.content h1 
+{
+    color: #606593;
+}
+
+body, html {
+  height: 100%;
+  background-color: #fffae0;
+  line-height: 1.8;
+}
+
+body {
+    background-color: #fffae0;
+}
