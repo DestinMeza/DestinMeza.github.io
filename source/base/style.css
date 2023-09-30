@@ -22,15 +22,43 @@ html,body
     padding: 0px;
     overflow-x: hidden; 
 }
-  
-.bg-image {
+
+.bg-hero {
     --bg-image-opacity: 0.25;
-    background-image: url(background.png);
+    background-image: url(hero-background.png);
 
     background-size:  cover;
     background-position: center;
 
     display: grid;
+    place-content: center;
+    text-align: center;
+    height: 800px;
+    max-height: 100%;
+    min-width: 100%;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.bg-hero::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: #050307;
+    opacity: var(--bg-image-opacity);
+}
+
+  
+.bg-image {
+    --bg-image-opacity: 0.25;
+    background-image: url(actual-background.png);
+
+    background-size:  cover;
+    background-position: center;
+
+    display: block;
     place-content: center;
     text-align: center;
     min-height: 100%;
@@ -53,8 +81,8 @@ header {
     /*background-color: #c2a2ad; */
     margin-block-start: 20px;
     margin-block-end: 20px;
-    padding-inline-start: 40px;
-    padding-inline-end: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 header .page-navigation
@@ -106,20 +134,28 @@ header .page-navigation nav .navgation-elements .push{
     margin-block-end: 0;
 }
 
-.projects ul 
+article
 {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 50px;
-    margin-inline-end: 50px;
-    background-color: #260462bd;
-    padding-inline-start: 60px;
-    padding-inline-end: 60px;
+    min-width: 100%;
 }
 
-.projects ul li 
+.projects
 {
-    display: block;
+    display: grid;
+    align-content: center;
+    margin-top: 0;
+}
+
+.projects ul 
+{
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    background-color: #260462bd;
 }
 
 .projects .project-header h2 {
@@ -156,15 +192,12 @@ header .page-navigation nav .navgation-elements .push{
     align-content: center;
 }
 
-@media (max-width: 600px)
+@media (width < 599px)
 {
     .projects .project-header h2{
         font-size: 3rem;
     }
-}
 
-@media (max-width: 600px)
-{
     .projects .project-resources .description{
         font-size: x-large;
     }
@@ -175,7 +208,10 @@ header .page-navigation nav .navgation-elements .push{
     }
 }
 
-@media (min-width: 599px)
+@media (width >= 600px)
 {
-
+    .projects ul li
+    {
+        max-width: 500px;
+    }
 }
